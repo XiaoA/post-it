@@ -1,9 +1,9 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.url :string
-      t.title :string
-      t.description :text
+      t.string :url
+      t.string :title
+      t.text :description
     end
   end
 end
