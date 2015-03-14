@@ -26,4 +26,7 @@ PostitTemplate::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Ignore all tables starting wiht 'sqlite' during the schema dump.
+  ActiveRecord::SchemaDumper.ignore_tables = /^sqlite_*/
 end
