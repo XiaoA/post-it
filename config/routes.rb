@@ -1,5 +1,8 @@
 PostitTemplate::Application.routes.draw do
   root to: 'posts#index'
 
-  resources :posts, except: [:destroy]
+  get '/posts', to: 'posts#index'
+  get '/posts/:id', to: 'posts#show'
+  
+#  resources :posts, except: [:destroy]
 end
