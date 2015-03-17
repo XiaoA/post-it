@@ -1,3 +1,11 @@
-<h3>Post #<%= @post.id %>: "<%= @post.title %>"</h4>
+<p class="lead">
+  <%= @post.title %>
+</p>
+
+<p>
+  <%= @post.description %>
+</p>
+
+<hr />
 
 <%= link_to 'Go back to all posts', posts_path %>
