@@ -2,9 +2,7 @@
   <span class="badge""><%= category.name %></span>
 <% end %>
 
-<p class="lead">
-  <%= @post.title %>
-</p>
+<%= render 'shared/content_title', title: @post.title %>
 
 <p>
   <%= @post.description %>
@@ -12,4 +10,4 @@
 
 <hr />
 
-<%= link_to 'Go back to all posts', posts_path %>
+
