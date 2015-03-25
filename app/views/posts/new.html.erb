@@ -1,1 +1,23 @@
-<h4>Create a new post!</h4>
+<!-- <h4>Create a new post!</h4> -->
+<div class="container">
+  <h2>Adventures in Rails Forms</h2>
+</div>
+
+<div>
+  <h4>Pure HTML</h4>
+    <form action="/posts" method="POST">
+      Title: <input type="text" name="my_title">
+    <br>
+    <input type="submit" class="btn btn-primary">
+  </form>
+</div>
+<hr>
+<div>
+  <h4>Rails form helpers</h4>
+  <%= form_tag '/posts' do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+    <br>
+    <%= submit_tag "Create Post", class: "btn btn-primary" %>
+    <% end %>
+</div>
