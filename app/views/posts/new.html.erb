@@ -21,3 +21,16 @@
     <%= submit_tag "Create Post", class: "btn btn-primary" %>
     <% end %>
 </div>
+
+<hr>
+
+<div>
+  <h4>Rails model-backed form helpers</h4>
+
+  <%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.submit "Create Post", class: 'btn btn-primary' %>
+    <% end %>
+</div>
