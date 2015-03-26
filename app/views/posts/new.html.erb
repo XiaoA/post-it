@@ -5,8 +5,8 @@
 
 <div>
   <h4>Pure HTML</h4>
-    <form action="/posts" method="POST">
-      Title: <input type="text" name="my_title">
+  <form action="/posts" method="POST">
+    Title: <input type="text" name="my_title">
     <br>
     <input type="submit" class="btn btn-primary">
   </form>
@@ -19,13 +19,22 @@
     <%= text_field_tag :title %>
     <br>
     <%= submit_tag "Create Post", class: "btn btn-primary" %>
-    <% end %>
+  <% end %>
 </div>
 
 <hr>
 
+
 <div>
   <h4>Rails model-backed form helpers</h4>
+  <% if @post.errors.any? %>
+    <h5>There were some errors:</h5>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+      <% end %>
+  <% end %>
+    </ul>
 
   <%= form_for @post do |f| %>
     <%= f.label :title %>
@@ -37,5 +46,6 @@
     <br>
 
     <%= f.submit "Create Post", class: 'btn btn-primary' %>
-    <% end %>
+  <% end %>
+
 </div>

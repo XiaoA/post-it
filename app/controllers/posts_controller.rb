@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @post = Post.all
   end
 
   def show
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     
     if @post.save
       flash[:notice] = "Your post was created."
-      redirect_to_posts_path
+      redirect_to posts_path
     else
       render 'new'
     end
