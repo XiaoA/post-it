@@ -12,9 +12,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
-
     @post = Post.new(params[:post])
+
+    if @post.ave
+      flash[:notice] = "Your post was created."
+      redirect_to_posts_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -28,6 +33,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-      params.require(:post).permit!
+    params.require(:post).permit!
   end
 end
