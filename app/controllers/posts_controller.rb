@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
   def create
     binding.pry
+
+    @post = Post.new(params[:post])
   end
 
   def edit
