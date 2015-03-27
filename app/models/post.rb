@@ -5,6 +5,6 @@ class Post < ActiveRecord::Base
   has_many :categories, through: :post_categories
 
   validates :title, presence: true
+  validates :description, presence: true
   validates :url, presence: true
-
 end
