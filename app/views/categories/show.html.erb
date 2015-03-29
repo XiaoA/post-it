@@ -1,1 +1,19 @@
-This is the <%= link_to @category.name %> Category page.
+<%= render 'shared/content_title', title: "All posts with category: #{@category.name}" %>
+
+<div class="row">
+  <% @category.posts.each do |post| %>
+    <div class="span8 well">
+      <%= render post.categories %>
+      <h4><%= link_to post.title, post.url %></h4>
+      <p><%= post.description %></p>
+      <p>
+	<span class="quiet">Posted by:</span><%= post.creator.username %> <small>at <%= post.created_at %></small>
+      </p>
+      <small>
+        <span>	  
+	  <%= link_to("#{post.comments.size} comments", post_path(post)) %>
+	</span>
+      </small
+    </div>
+</div>
+  <% end %>
