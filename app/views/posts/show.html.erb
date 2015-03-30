@@ -21,3 +21,12 @@
   </div>
   <%= f.submit "Create comment", class: "btn btn-primary" %>
 <% end %>
+
+<h5>Comments:</h5>
+
+<% @post.comments.each do |comment| %>
+  <div class="well span8">
+    <em>"<%= comment.body %>"</em>
+    by <%= link_to @comment.creator.username, '' %> at comment.created_at
+  </div>
+<% end %>
