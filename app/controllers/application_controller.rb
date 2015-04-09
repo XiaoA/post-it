@@ -18,4 +18,5 @@ class ApplicationController < ActionController::Base
       flash[:error] = "Must be logged in to do that."
       redirect_to post_path
   end
+  end
 end
