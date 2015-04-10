@@ -14,7 +14,7 @@
 <hr />
 
 <% if logged_in? %>
-  <%= form_for [@post, @comment] do |f | %>
+  <%= form_for @post, @comment] do |f | %>
     <%= render 'shared/errors', obj: @comment %>
     <div class = "control-group">
       <%= f.label :body, 'Leave a comment' %>
