@@ -46,6 +46,9 @@
   </div>
 <% else # logged out %>
   <div class="nav_item">
+    <%= link_to "Register", register_path, class: "btn btn-small" %>
+  </div>
+  <div class="nav_item">
     <%= link_to "Log in", login_path, class: "btn btn-small" %>
   </div>
 <% end %>
