@@ -1,0 +1,5 @@
+<div class="well span8">
+  <em>"<%= comment.body %>"</em>
+  <br>
+  <span class="quiet">by</span> <%= link_to comment.creator.username %> <small>on <%= display_datetime(comment.created_at) %></small>
+</div>
