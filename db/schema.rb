@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420025144) do
+ActiveRecord::Schema.define(version: 20150421045918) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150420025144) do
 
   create_table "votes", force: :cascade do |t|
     t.boolean  "vote"
-    t.integer  "userid"
+    t.integer  "user_id"
     t.string   "voteable_type"
     t.integer  "voteable_id"
     t.datetime "created_at"
