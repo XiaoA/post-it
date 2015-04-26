@@ -45,7 +45,6 @@ class PostsController < ApplicationController
     else
       flash[:error] = "Whoops, your vote was not counted."
     end
-
     redirect_to :back
   end
 
