@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   def edit
   end
 
+  
   def update
     if @user.update(user_params)
       flash[:notice] = "Your profile has been updated."
@@ -40,8 +41,8 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
-  end
+    @user = User.find_by slug: params[:id]
+  end 
 
   def require_same_user
     if current_user != @user
@@ -50,3 +51,4 @@ class UsersController < ApplicationController
     end
   end
 end
+
