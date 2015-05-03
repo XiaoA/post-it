@@ -1,13 +1,9 @@
 module Voteable
-  def self.included(base)
-    base.send(:include, InstanceMethods)
-    base.extend ClassMethods
-    base.class_eval do
-      my_class_method
-    end
-  end
+  extend ActiveSupport::Concern
 
-  module InstanceMethods
+  included do
+    has_many :votes, as: :voteable
+
     def total_votes
       self.up_votes - self.down_votes
     end
@@ -18,12 +14,6 @@ module Voteable
 
     def down_votes
       self.votes.where(vote: false).size
-    end
-  end
-
-  module ClassMethods
-    def my_class_method
-      has_many :votes, as: :voteable
     end
   end
 end
