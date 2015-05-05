@@ -37,8 +37,7 @@ class PostsController < ApplicationController
       render 'edit'
     end
   end
-
-
+  
   def vote
     @vote = Vote.create(voteable: @post, creator: current_user, vote: params[:vote])
 
