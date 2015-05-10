@@ -5,8 +5,8 @@ PostitTemplate::Application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-  get '/pin', to: 'sessions#pin'
-  post '/pin', to: 'sessions#pin'
+#  get '/pin', to: 'sessions#pin'
+#  post '/pin', to: 'sessions#pin'
   get '/about', to: 'static#show'
   
   resources :posts, except: [:destroy] do
@@ -14,11 +14,11 @@ PostitTemplate::Application.routes.draw do
       post :vote 
     end
 
-  resources :comments, only: [:create] do
-    member do
-      post :vote
+    resources :comments, only: [:create] do
+      member do
+        post :vote
+      end
     end
-  end
   end
   
   resources :categories, only: [:new, :create, :show]
